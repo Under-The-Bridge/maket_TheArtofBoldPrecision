@@ -1,11 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
 *{
+    scrollbar-width:none;
+    transition:0.25s ease-in;
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Instrument Sans";
 }
 body{
     display: grid;
-    grid-template-rows: 10px 1fr 10px;
+    grid-template-rows: 35px 1fr 10px;
     align-items: center;
     justify-content: space-around;
     background-color: #000000;
@@ -17,14 +20,14 @@ main{
     color: white;
     grid-template-rows: 1fr 1fr 1fr 1fr;
 }
-#page1,#page2,#page3,#page4{
-    width: 80vw;
-    height: 100vh;
+.page{
+    width: 71vw;
+    height: 90vh;
+    /* outline: 1px red solid; */
+    display: grid;
 }
 #page1{
-    width: 95vw;
-    height: 90vh;
-    display: grid;
+    height: 858px;
     grid-template-rows: 42px 15px 1fr;
 }
 #page1{
@@ -38,9 +41,10 @@ main{
     #nav{
     
         display: grid;
-        grid-template-columns: 55px 75px 90px 95px;
+        grid-template-columns: 55px 75px 90px 105px;
         justify-content: space-between;
         a{
+            text-transform:uppercase;
             text-decoration: none;
             color: white;
         }
@@ -57,35 +61,148 @@ main{
     #over-panel-texts{
         display: grid;
         grid-template-rows: 26px 1fr 50px;
-        div:first-child{
-            font-size: 24px;
+        >div{
+            color:#ffffffdd;
+            font-size:16px;
+            line-height:110%;
+            letter-spacing:-0.5px;
         }
+        >div:first-child{
+            color:white;
+            font-size: 24px;
+            letter-spacing:-1px;
+        }
+    }
+    #barcode{
+        background-image: url(assets/barcode_vertical.svg);
+    }
+}
+#panel{
+    display:grid;
+    justify-content:center;
+    align-items:center;
+    >div{
+        font-size:140px;
+        text-align:center;
+        font-weight:500;
+        letter-spacing:-4px;
+        line-height:98%;
     }
 }
 #underHeader{
     background-image: url(assets/Hero\ Section.png);
+    background-size:cover;
+    background-position-y:40%;
     display: grid;
     grid-template-rows: 86px 1fr 52px;
 }
 #under-panel{
     display: grid;
-    grid-template-columns: 262px 52vw 234px;
+    grid-template-columns: 262px 0.95fr 234px;
     justify-content: space-between;
     text-transform: uppercase;
     align-items: center;
     #under-panel-btn, #under-panel-line{
         box-sizing: border-box;
-        border: 1px #FFFFFFCC solid;
+        border: 1px #ffffff87 solid;
+    }
+    #under-panel-line{
+        height:0;
     }
     #under-panel-line>div{
         display: grid;
         justify-content: center;
-        width: 20vw;
     }
     #under-panel-btn, #under-panel-text{
+        letter-spacing:-0.75px;
         height: 100%;
         display: grid;
         justify-content: center;
         align-items: center;
+    }
+}
+#page2{
+    height: 750px;
+    grid-template-columns: repeat(2, 660px);
+    justify-content: space-between;
+}
+#page2-left-panel{
+    display: grid;
+    grid-template-rows: 176px 574px;
+    
+    #about-schrift-img{
+        background-image: url(assets/About\ Image.png);
+        background-position:50% 200%;
+        background-repeat: no-repeat;
+    }
+    #about-schrift{
+        display: grid;
+        justify-content: start;
+        align-items: center;
+        >div{
+            width: 440px;
+            font-size: 80px; 
+            text-transform: uppercase;
+            line-height:110%;
+            letter-spacing:-3px;
+            font-weight:500;
+        }
+    }
+}
+#page2-right-panel{
+    display: grid;
+    grid-template-rows: 102px 608px;
+    align-content: space-between;
+    #schrift-is{
+        font-size:24px;
+        line-height:140%;
+        text-transform:uppercase;
+        letter-spacing:-0.95px;
+    }
+    #tickets-grid{
+        display: grid;
+        grid-template-columns: repeat(2,240px);
+        grid-template-rows: repeat(2,276px);
+        align-content: space-between;
+        column-gap: 55px;
+        .tickets{
+            padding: 16px;
+            background-image: url(assets/ticket.svg);
+            display: grid;
+            grid-template-rows: 158px 1fr 54px;
+            align-content: space-between;
+            .ticket-info{
+                display: grid;
+                grid-template-rows: 26px 20px 88px;
+                align-content: space-between;
+                .logo{background-repeat: no-repeat;}
+                #logo1{background-image: url(assets/ticket_logo1.svg);}
+                #logo2{background-image: url(assets/ticket_logo2.svg);}
+                #logo3{background-image: url(assets/ticket_logo3.svg);}
+                #logo4{background-image: url(assets/ticket_logo4.svg);}
+                .ticket-name{
+                    text-transform: uppercase;
+                    font-size:18px;
+                    line-height:150%;
+                    letter-spacing:-0.5px;
+                }
+                .ticket-desc{
+                    font-weight:400;
+                    line-height:140%;
+                    letter-spacing:-0.25px;
+                }
+            }
+            .ticket-line{
+                display:grid;
+                align-items:center;
+                div{
+                    height: 0;
+                    border: 1px #FFFFFF66 dashed;
+                }
+            }
+            .barcode{
+                background-image: url(assets/barcode_horizontal.svg);
+            }
+        }
     }
 }
