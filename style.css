@@ -37,10 +37,10 @@ main{
 }
 #header{
     display: grid;
-    grid-template-columns: 99px 1fr 435px;
+    grid-template-columns: 99px 435px;
     border-bottom: 1px solid #FFFFFF66;
+    justify-content: space-between;
     #nav{
-    
         display: grid;
         grid-template-columns: 55px 75px 90px 105px;
         justify-content: space-between;
